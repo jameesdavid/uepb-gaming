@@ -1,6 +1,8 @@
-# UepbGaming
+# UEPB Gaming
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+
+And updated to version 14.2.0.
 
 ## Development server
 
