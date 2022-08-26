@@ -11,6 +11,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      # Replacing environments
+      - name: Replace secret
+        uses: cschleiden/replace-tokens@v1
+        with:
+          tokenPrefix: '{'
+          tokenSuffix: '}'
+          files: 'src/environments/environment.prod.ts'
+        env:
+          UEPB_GAMING_PROJECT_ID: '${{ secrets.UEPB_GAMING_PROJECT_ID }}'
+          UEPB_GAMING_APP_ID: '${{ secrets.UEPB_GAMING_APP_ID }}'
+          UEPB_GAMING_STORAGE_BUCKET: '${{ secrets.UEPB_GAMING_STORAGE_BUCKET }}'
+          UEPB_GAMING_LOCATION_ID: '${{ secrets.UEPB_GAMING_LOCATION_ID }}'
+          UEPB_GAMING_API_KEY: '${{ secrets.UEPB_GAMING_API_KEY }}'
+          UEPB_GAMING_AUTH_DOMAIN: '${{ secrets.UEPB_GAMING_AUTH_DOMAIN }}'
+          UEPB_GAMING_MESSAGING_SENDER_ID: '${{ secrets.UEPB_GAMING_MESSAGING_SENDER_ID }}'
+          UEPB_GAMING_MEASUREMENT_ID: '${{ secrets.UEPB_GAMING_MEASUREMENT_ID }}'
+
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
