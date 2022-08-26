@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "45c0b48e-f4f2-4c95-9b57-f2f71b0d7cd4"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -98,9 +101,18 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "uepb-gaming:build:production",
+            "firebaseProject": "uepb-gaming-20b70",
+            "firebaseHostingSite": "uepb-gaming-20b70"
+          }
         }
       }
     }
-  },
-  "defaultProject": "uepb-gaming"
+  }
 }

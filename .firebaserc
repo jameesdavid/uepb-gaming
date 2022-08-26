@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "uepb-gaming-20b70"
+  },
+  "targets": {
+    "uepb-gaming-20b70": {
+      "hosting": {
+        "uepb-gaming": [
+          "uepb-gaming-20b70"
+        ]
+      }
+    }
+  }
+}
