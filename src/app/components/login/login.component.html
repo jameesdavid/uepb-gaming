@@ -1,0 +1,29 @@
+<div class="back-geral">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="assets/logo.png" id="icon" alt="User Icon" />
+      </div>
+
+      <!-- Login Form -->
+      <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+        <input type="email" name="email" id="login" class="fadeIn second" placeholder="Email" [(ngModel)]="login.email">
+        <input type="password" name="password" id="password" class="fadeIn third" placeholder="Senha" [(ngModel)]="login.senha">
+        <button type="submit" class="fadeIn fourth">Entrar</button>
+      </form>
+
+      <div>
+        <button type="button" class="fadeIn fourth">Entrar com Google</button>
+      </div>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Esqueceu a senha?</a>
+      </div>
+
+    </div>
+  </div>
+</div>
