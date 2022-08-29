@@ -1,0 +1,337 @@
+<app-header></app-header>
+<div class="container p-3 form-profile">
+
+  <div class="row mb-5 title-divider">
+    <div class="col-12 mb-3">
+      <span>Informações Pessoais</span>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-12 col-lg-4 mb-3">
+      <label for="name" class="form-label">Nome completo</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="form.name">
+    </div>
+    <div class="col-12 col-lg-3 mb-3">
+      <label for="registration" class="form-label">Nome de exibição</label>
+      <input type="text" class="form-control" id="registration" [(ngModel)]="form.displayName">
+    </div>
+    <div class="col-12 col-lg-2 mb-3">
+      <label for="birthday" class="form-label">Data de nascimento</label>
+      <input type="date" class="form-control" id="birthday" [(ngModel)]="form.birthday">
+    </div>
+    <div class="col-12 col-lg-3 mb-3">
+      <label for="course" class="form-label">Curso</label>
+      <input type="text" class="form-control" id="course" [(ngModel)]="form.course">
+    </div>
+    <div class="col-12 col-lg-3 mb-3">
+      <label for="registration" class="form-label">Matrícula</label>
+      <input type="text" class="form-control" id="registration" [(ngModel)]="form.registration">
+    </div>
+    <div class="col-12 col-lg-4 mb-3">
+      <label for="registration" class="form-label">Campus</label>
+      <select class="form-select" [(ngModel)]="form.campus">
+        <option *ngFor="let i of campus" [ngValue]="i">{{i}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mb-5 title-divider">
+    <div class="col-12 mb-3">
+      <span>Aplicar para um time</span>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-5">
+    <div *ngFor="let game of form.games, let i = index" class="col-3">
+      <div class="game-img" [ngClass]="{'game-img-active': game.active}" (click)="addGame(i)">
+        <img [src]="game?.image" />
+      </div>
+    </div>
+  </div>
+
+  <div class="my-5" *ngIf="form.games[0].active">
+    <div class="row mb-4">
+      <div class="col game-title">Clash Royale</div>
+    </div>
+    <div class="row g-3">
+      <div class="col-12 col-lg-6">
+        <span>Quantos troféus você tem atualmente?</span>
+        <input type="number" class="form-control" [(ngModel)]="form.games[0].answers[0]">
+      </div>
+      <div class="col-12 col-lg-6">
+        <span>Qual foi seu maior número de troféus?</span>
+        <input type="number" class="form-control" [(ngModel)]="form.games[0].answers[1]">
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual seu nick?</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[0].nick">
+      </div>
+    </div>
+  </div>
+
+  <div class="my-5" *ngIf="form.games[1].active">
+    <div class="row mb-4">
+      <div class="col game-title">Counter-Strike: Global Offensive</div>
+    </div>
+    <div class="row g-3">
+      <div class="col-12 col-lg-4">
+        <span>Qual seu LV na GamersClub?</span>
+        <select class="form-select" [(ngModel)]="form.games[1].answers[0]">
+          <option *ngFor="let i of lvgc" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual foi seu maior LV na GamersClub?</span>
+        <select class="form-select" [(ngModel)]="form.games[1].answers[1]">
+          <option *ngFor="let i of lvgc" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual sua patente?</span>
+        <select class="form-select" [(ngModel)]="form.games[1].answers[2]">
+          <option *ngFor="let i of patentes" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Link do seu perfil da Steam, ou ID do Steam:</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[1].nick">
+      </div>
+    </div>
+  </div>
+
+  <div class="my-5" *ngIf="form.games[2].active">
+    <div class="row mb-4">
+      <div class="col game-title">FIFA</div>
+    </div>
+    <div class="row g-3">
+      <div class="col-12 col-lg-6">
+        <span>Qual seu melhor desempenho na Weekend League?</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[2].answers[0]">
+      </div>
+      <div class="col-12 col-lg-6">
+        <span>Qual foi seu melhor desempenho nos campeonatos da EA?</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[2].answers[1]">
+      </div>
+      <div class="col-12 col-lg-6">
+        <span>A quanto tempo joga FIFA?</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[2].answers[2]">
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual seu nick?</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[2].nick">
+      </div>
+    </div>
+  </div>
+
+  <div class="my-5" *ngIf="form.games[3].active">
+    <div class="row mb-4">
+      <div class="col game-title">Free Fire</div>
+    </div>
+    <div class="row g-3">
+      <div class="col-12 col-lg-6">
+        <span>Qual seu rank atual no modo ranqueado/CS?</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[3].answers[0]">
+      </div>
+      <div class="col-12 col-lg-6">
+        <span>Qual foi seu maior rank no modo ranqueado/CS?</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[3].answers[1]">
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual seu nick?</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[3].nick">
+      </div>
+    </div>
+  </div>
+
+  <div class="my-5" *ngIf="form.games[4].active">
+    <div class="row mb-4">
+      <div class="col game-title">League of Legends</div>
+    </div>
+    <div class="row g-3">
+      <div class="col-12 col-lg-6">
+        <span>Qual seu elo atual na ranqueada solo?</span>
+        <select class="form-select" [(ngModel)]="form.games[4].answers[0]">
+          <option *ngFor="let i of elos" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-6">
+        <span>Qual foi seu maior elo na ranqueada solo?</span>
+        <select class="form-select" [(ngModel)]="form.games[4].answers[1]">
+          <option *ngFor="let i of elos" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual sua lane principal?</span>
+        <select class="form-select" [(ngModel)]="form.games[4].answers[2]">
+          <option *ngFor="let i of lanes" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual sua lane secundária?</span>
+        <select class="form-select" [(ngModel)]="form.games[4].answers[3]">
+          <option *ngFor="let i of lanes" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual seu nick e tag?</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[4].nick">
+      </div>
+    </div>
+  </div>
+
+  <div class="my-5" *ngIf="form.games[5].active">
+    <div class="row mb-4">
+      <div class="col game-title">Poker</div>
+    </div>
+    <div class="row g-3">
+      <div class="col-12 col-lg-4">
+        <span>Joga por algum time?</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[5].answers[0]">
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Torneios que costuma jogar:</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[5].answers[1]">
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Link do seu SharkScope: </span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[5].answers[2]">
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual seu nick?</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[5].nick">
+      </div>
+    </div>
+  </div>
+
+  <div class="my-5" *ngIf="form.games[6].active">
+    <div class="row mb-4">
+      <div class="col game-title">Valorant</div>
+    </div>
+    <div class="row g-3">
+      <div class="col-12 col-lg-6">
+        <span>Qual seu rank atual?</span>
+        <select class="form-select" [(ngModel)]="form.games[6].answers[0]">
+          <option *ngFor="let i of ranksValorant" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-6">
+        <span>Qual foi seu maior rank?</span>
+        <select class="form-select" [(ngModel)]="form.games[6].answers[1]">
+          <option *ngFor="let i of ranksValorant" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual sua classe principal?</span>
+        <select class="form-select" [(ngModel)]="form.games[6].answers[2]">
+          <option *ngFor="let i of classesValorant" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual sua classe secundária?</span>
+        <select class="form-select" [(ngModel)]="form.games[6].answers[3]">
+          <option *ngFor="let i of classesValorant" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual seu nick e tag?</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[6].nick">
+      </div>
+    </div>
+  </div>
+
+  <div class="my-5" *ngIf="form.games[7].active">
+    <div class="row mb-4">
+      <div class="col game-title">Wild Rift</div>
+    </div>
+    <div class="row g-3">
+      <div class="col-12 col-lg-6">
+        <span>Qual seu elo atual na ranqueada?</span>
+        <select class="form-select" [(ngModel)]="form.games[7].answers[0]">
+          <option *ngFor="let i of elosWildRift" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-6">
+        <span>Qual foi seu maior elo na ranqueada?</span>
+        <select class="form-select" [(ngModel)]="form.games[7].answers[1]">
+          <option *ngFor="let i of elosWildRift" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual sua lane principal?</span>
+        <select class="form-select" [(ngModel)]="form.games[7].answers[2]">
+          <option *ngFor="let i of lanesWildRift" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual sua lane secundária?</span>
+        <select class="form-select" [(ngModel)]="form.games[7].answers[3]">
+          <option *ngFor="let i of lanesWildRift" [ngValue]="i">{{i}}</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span>Qual seu nick e tag?</span>
+        <input type="text" class="form-control" [(ngModel)]="form.games[7].nick">
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="row mb-5">
+    <div class="col-12 mb-3">
+      <div class="row" *ngFor="let gameSelected of form.games; let ind = index">
+        <div class="col-12 col-lg-4 mb-3">
+          <label for="select-modalidade" class="form-label">Modalidade:</label>
+          <select id="select-modalidade" [(ngModel)]="form.games[ind]" class="form-select"
+            aria-label="Escolha uma modalidade">
+            <option *ngFor="let game of games; let i = index" [ngValue]="game" [disabled]="isSelected(game)">
+              {{game.name}}</option>
+          </select>
+        </div>
+
+        <div class="col-12 col-lg-4 mb-3">
+          <label [for]="gameSelected.id" class="form-label">{{gameSelected.rankName || "Rank"}}</label>
+          <input type="text" class="form-control" [id]="gameSelected.id" [(ngModel)]="form.games[ind].answer">
+        </div>
+
+        <div class="col-12 col-lg-4 mb-3">
+          <label for="nickname" class="form-label">Nick no jogo</label>
+          <input type="text" class="form-control" id="nickname" [(ngModel)]="form.games[ind].nick">
+        </div>
+      </div>
+      <button type="button" [disabled]="this.form.games.length >= this.games.length" class="btn"
+        (click)="addGame()"><i class="pi pi-plus"></i></button>
+    </div>
+  </div> -->
+
+  <div class="row mb-5 title-divider">
+    <div class="col-12">
+      <span>Contato & Redes Sociais</span>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+
+    <div class="col-12 col-lg-4 mb-3">
+      <label for="whatsapp" class="form-label">WhatsApp</label>
+      <input type="text" class="form-control" id="whatsapp" [(ngModel)]="form.whatsapp">
+    </div>
+    <div class="col-12 col-lg-4 mb-3">
+      <label for="instagram" class="form-label">Instagram</label>
+      <input type="text" class="form-control" id="instagram" [(ngModel)]="form.instagram">
+    </div>
+    <div class="col-12 col-lg-4 mb-3">
+      <label for="facebook" class="form-label">Facebook</label>
+      <input type="text" class="form-control" id="facebook" [(ngModel)]="form.facebook">
+    </div>
+
+    <div class="col-12 mb-3">
+      <label for="schedules" class="form-label">Quais os seus horários livres para treinos?</label>
+      <textarea class="form-control" id="schedules" [(ngModel)]="form.schedules"></textarea>
+    </div>
+
+    <div class="col-12" style="text-align: center;">
+      <button type="button" class="btn submit-button" (click)="submit()">ENVIAR</button>
+    </div>
+
+  </div>
+</div>

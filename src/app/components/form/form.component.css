@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+input, textarea, select, option {
+  background-color: #181818 !important;
+  color: #ffffff !important;
+  border-radius: 0px !important;
+  border-color: #ffffff9f !important;
+}
+.form-profile {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
+  color: #ff4f4f;
+  font-size: 14pt;
+}
+.title-divider {
+  text-align: center;
+  font-size: 30pt;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #ffffff;
+}
+button {
+  background: #ff4747;
+  border-color: #ff4747 !important;
+  color: #ffffff;
+}
+button:hover {
+  background: #0f0f0f;
+  color: #ff4747;
+}
+button:focus {
+  outline: 0;
+  text-shadow: none;
+}
+.submit-button {
+  min-width: 250px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.game-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.game-img > img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border: 3px solid rgba(0,0,0,0);
+  border-radius: 1rem;
+  box-sizing: border-box;
+}
+.game-img > img:hover {
+  border: 3px solid #ff4747;
+}
+.game-img-active > img {
+  border: 3px solid #ff4747;
+}
+.game-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18pt;
+}
