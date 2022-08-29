@@ -1,0 +1,30 @@
+.background-login {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+}
+.login-container {
+  position: fixed;
+  z-index: 1002;
+  width: 500px;
+  height: 600px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1em;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+}
+.logo {
+  text-align: center;
+}
+.check-div {
+  text-align: justify;
+  font-size: 10pt;
+}
+.buttons {
+  height: 50px;
+}
