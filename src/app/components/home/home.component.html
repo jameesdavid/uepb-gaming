@@ -1,0 +1,49 @@
+<app-login *ngIf="displayLogin"></app-login>
+
+<header class="page-head">
+  <div class="head-container">
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container pb-1 c-border">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="#">
+          <img src="assets/UEPB_B.png" alt="" class="d-inline-block align-text-top logo-img">
+        </a>
+
+        <div class="collapse navbar-collapse flex-grow-0" id="navbar1">
+          <ul class="navbar-nav nav-items-custom me-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-3">
+              <a class="nav-link">Loja</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link">Sobre</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link">Notícias</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link">Eventos</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" (click)="loginWithGoogleAuth()">Entrar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="home-container">
+  <div id="welcome-msg">
+    <span>Junte-se ao clube de eSports da UEPB!</span>
+  </div>
+  <div id="login-button">
+    <app-login></app-login>
+  </div>
+  <div id="wip-msg">
+    <span>Site em construção. Em breve, muitas novidades.</span>
+  </div>
+</div>
