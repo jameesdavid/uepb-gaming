@@ -1,3 +1,4 @@
+<p-blockUI [blocked]="blockUI"></p-blockUI>
 <app-header></app-header>
 <div class="container p-3 form-profile">
 
@@ -12,9 +13,13 @@
       <label for="name" class="form-label">Nome completo</label>
       <input type="text" class="form-control" id="name" [(ngModel)]="form.name">
     </div>
-    <div class="col-12 col-lg-3 mb-3">
-      <label for="registration" class="form-label">Nome de exibição</label>
-      <input type="text" class="form-control" id="registration" [(ngModel)]="form.displayName">
+    <div class="col-12 col-lg-4 mb-3">
+      <label for="displayName" class="form-label">Nome curto</label>
+      <input type="text" class="form-control" id="displayName" [(ngModel)]="form.displayName">
+    </div>
+    <div class="col-12 col-lg-4 mb-3">
+      <label for="nick" class="form-label">Nick</label>
+      <input type="text" class="form-control" id="nick" [(ngModel)]="form.nick">
     </div>
     <div class="col-12 col-lg-2 mb-3">
       <label for="birthday" class="form-label">Data de nascimento</label>
@@ -29,8 +34,8 @@
       <input type="text" class="form-control" id="registration" [(ngModel)]="form.registration">
     </div>
     <div class="col-12 col-lg-4 mb-3">
-      <label for="registration" class="form-label">Campus</label>
-      <select class="form-select" [(ngModel)]="form.campus">
+      <label for="campus" class="form-label">Campus</label>
+      <select id="campus" class="form-select" [(ngModel)]="form.campus">
         <option *ngFor="let i of campus" [ngValue]="i">{{i}}</option>
       </select>
     </div>

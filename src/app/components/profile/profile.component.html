@@ -1,14 +1,35 @@
 <app-header></app-header>
-<div class="container-lg profile">
-  <div class="row">
-    <div class="col">
-      <div>
-        <img width="100" [src]="photoURL" />
-      </div>
-      <div>
-        <span>{{user?.displayName}}</span>
+<!-- <div class="profile-top">
+  <div class="head-photo">
+    <img [src]="photoURL" />
+  </div>
+  <div id="username">
+    <span>{{user.displayName}}</span>
+  </div>
+</div> -->
+<div class="profile-background">
+  <div class="card-container">
+    <div class="card" id="card">
+      <div class="card-grid">
+        <div class="card-flex">
+          <div class="card-username-container">
+            <h1 class="silver" id="name">{{user?.displayName}}</h1>
+            <h1 class="silver" id="nick">{{user?.nick}}</h1>
+          </div>
+          <img [src]="photoURL" />
+          <span class="silver" id="id-number">{{user?.registration}}</span>
+          <span id="role" class="silver">{{user?.role}}</span>
+        </div>
+
+        <div class="card-flex">
+        </div>
+
+        <div class="card-flex" id="card-3">
+          <div class="game-icon" *ngFor="let game of gamesActive">
+            <img src="assets/games-icons/{{game}}_icon.png">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-

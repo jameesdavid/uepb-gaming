@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -12,8 +12,9 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { AccordionModule } from 'primeng/accordion';
+import { BlockUIModule } from 'primeng/blockui';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -25,6 +26,7 @@ import { FormComponent } from './components/form/form.component';
 import { HeaderComponent } from './components/header/header.component';
 
 import { environment } from '../environments/environment';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { environment } from '../environments/environment';
     HomeComponent,
     ProfileComponent,
     FormComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -43,13 +46,14 @@ import { environment } from '../environments/environment';
     AvatarModule,
     ButtonModule,
     AccordionModule,
+    BlockUIModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage()),
-    NgbModule
+    provideStorage(() => getStorage())
   ],
   providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

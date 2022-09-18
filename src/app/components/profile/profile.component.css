@@ -1,4 +1,204 @@
-.profile {
-  /* background-color: #303030; */
-  padding-top: 1em;
+.profile-background {
+  width: 100%;
+  height: 100%;
+  /* min-height: 100vh; */
+  /* background: rgb(111,111,111); */
+  /* background: linear-gradient(225deg, rgba(111,111,111,1) 0%, rgba(32,32,32,1) 100%); */
+  padding-top: 2rem;
+}
+.profile-top {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 3rem;
+}
+.head-photo {
+  width: 100%;
+  text-align: center;
+}
+#username {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  width: 600px;
+  height: 360px;
+  background: rgb(60,60,60);
+  background: linear-gradient(90deg, rgba(60,60,60,1) 0%, rgba(22,22,22,1) 80%, rgba(255,46,46,1) 80%);
+  border: none;
+  border-radius: 1rem;
+  color: #ffffff;
+  -webkit-box-shadow: 0px 0px 18px 5px rgba(200, 200, 200, 0.6);
+  box-shadow: 0px 0px 18px 5px rgba(200, 200, 200, 0.6);
+  z-index: 1;
+}
+#card:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  right: 25%;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  /* margin-top: 2%; */
+  z-index: -1;
+  opacity: 0.7;
+  background-image: url('/assets/uepbgaming2.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+.card-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: 1fr / 30% 50% 20%;
+}
+.card-flex {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 1rem 0;
+  gap: 2px;
+  font-family: 'Play', sans-serif;
+  font-weight: 400;
+  font-weight: 1rem;
+}
+.card-flex > img {
+  border-radius: 1rem;
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+.card-username-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.gold {
+  background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
+  position: relative;
+}
+.gold:after {
+  background: none;
+  content: attr(data-heading);
+  left: 0;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+  text-shadow:
+  -1px 0 1px #c6bb9f,
+  0 1px 1px #c6bb9f,
+  2px 2px 5px rgba(0, 0, 0, 0.4),
+  -2px -2px 5px rgba(0, 0, 0, 0.4);
+}
+.silver {
+  background: linear-gradient(to bottom, #d1d1d1 22%,#636363 24%, #cecece 26%, #cecece 27%,#ffffff 40%,#3f3f3f 78%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
+  position: relative;
+  text-shadow: 0px 1px 0px rgba(230,230,230,0.6);
+}
+/* .silver:after {
+  background: none;
+  content: attr(data-heading);
+  left: 0;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+  text-shadow:
+  -1px 0 1px #c5c5c5,
+  0 1px 1px #c5c5c5,
+  5px 5px 10px rgba(0, 0, 0, 0.2),
+	-5px -5px 10px rgba(0, 0, 0, 0.2);
+} */
+#name {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  /* font-weight: 700; */
+  /* color: #f10000; */
+}
+#nick {
+  font-size: 1.1rem;
+  /* font-weight: 700; */
+}
+#id-number {
+  font-size: 1rem;
+}
+#role {
+  font-weight: 400;
+  font-size: 1rem;
+}
+.card-mid-flex {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  /* padding: 1rem; */
+  gap: 1rem;
+  font-family: 'Play', sans-serif;
+  font-weight: 600;
+}
+.top-midcard {
+  width: 100%;
+  height: 100%;
+}
+.games-flex {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  gap: 10px;
+}
+.bottom-midcard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+  padding-bottom: 10px;
+}
+
+.game-icon > img {
+  filter: invert(100%);
+  max-width: 50px;
+}
+
+.game-icon {
+  text-align: center;
+}
+
+#card-3 {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  gap: 10px;
 }

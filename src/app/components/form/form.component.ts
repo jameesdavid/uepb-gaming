@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+
 import { AuthService } from '../../services/auth.service';
 import { RestService } from '../../services/rest.service';
 
@@ -44,6 +46,7 @@ export class FormComponent implements OnInit {
     registration: "",
     campus: "",
     displayName: "",
+    nick: "",
     games: [
       {
         id: "clashroyale",
@@ -126,7 +129,7 @@ export class FormComponent implements OnInit {
 
   getSubscription: Subscription;
 
-  constructor(private authService: AuthService, private restService: RestService) {
+  constructor(private authService: AuthService, private restService: RestService, private router: Router) {
     this.id = this.authService.userLoggedIn.uid;
     this.getSubscription = this.restService.get(this.authService.userLoggedIn.uid).subscribe({
       next: (res: any) => {
@@ -148,6 +151,7 @@ export class FormComponent implements OnInit {
     .then((res) => {
       console.log(res);
       this.blockUI = false;
+      this.router.navigate(['/me']);
     })
     .catch((e) => {
       console.log(e);

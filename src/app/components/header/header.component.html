@@ -6,16 +6,16 @@
 
     <div *ngIf="user" class="action">
       <div class="profile" (click)="toggleDropdown()">
-        <img [src]="photoURL" height="50" />
+        <img [src]="photoURL" height="50" referrerpolicy="no-referrer" />
       </div>
       <div class="menu" *ngIf="displayDropdown">
         <h3>{{user.displayName}}<br /><span></span></h3>
         <ul>
           <li>
-            <img src="./assets/icons/user.png" /><a [routerLinkActive]="['active', 'nav-active']" routerLink="/me">Meu perfil</a>
+            <img src="./assets/icons/user.png" /><a [routerLinkActive]="['active', 'nav-active']" routerLink="/me">Minha conta</a>
           </li>
           <li>
-            <img src="./assets/icons/mail.png" /><a [routerLinkActive]="['active', 'nav-active']" routerLink="/inbox">Inbox</a>
+            <img src="./assets/icons/edit.png" /><a [routerLinkActive]="['active', 'nav-active']" routerLink="/edit">Editar conta</a>
           </li>
           <li (click)="logout()">
             <img src="./assets/icons/log-out.png" /><a href="#">Logout</a>

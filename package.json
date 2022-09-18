@@ -24,6 +24,8 @@
     "@popperjs/core": "^2.10.2",
     "bootstrap": "^5.2.0",
     "firebase": "^9.9.3",
+    "html-to-image": "^1.10.8",
+    "html2canvas": "^1.4.1",
     "primeicons": "^5.0.0",
     "primeng": "^14.0.2",
     "rxjs": "~7.4.0",
