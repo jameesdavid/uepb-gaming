@@ -100,3 +100,11 @@ a {
   height: auto;
   opacity: 1;
 }
+@media (max-width: 390px) {
+  .home-container {
+    padding-top: 80px;
+  }
+  #welcome-msg {
+    font-size: 2rem;
+  }
+}

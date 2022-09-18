@@ -107,3 +107,25 @@
 ul > li > img {
   filter: invert(100%);
 }
+
+@media (max-width: 280px){
+  .action {
+    width: 170px;
+  }
+  .action .menu {
+    width: 170px;
+  }
+  .action .menu h3 {
+    font-size: 14px;
+  }
+
+  .action .menu h3 span {
+    font-size: 12px;
+  }
+  .action .menu ul li {
+    font-size: 12px;
+  }
+  ul {
+    padding-left: 1rem !important;
+  }
+}
