@@ -202,3 +202,90 @@
   justify-items: center;
   gap: 10px;
 }
+@media (max-width: 650px) {
+  .card {
+    width: 400px;
+    height: 240px;
+  }
+  #name {
+    text-transform: uppercase;
+    font-size: 12px;
+    /* font-weight: 700; */
+    /* color: #f10000; */
+  }
+  #nick {
+    font-size: 12px;
+    /* font-weight: 700; */
+  }
+  #id-number {
+    font-size: 10px;
+  }
+  #role {
+    font-weight: 400;
+    font-size: 10px;
+  }
+  .game-icon > img {
+    max-width: 38px;
+  }
+  h1 {
+    margin-bottom: 3px !important;
+  }
+}
+@media (max-width: 400px) {
+  .card {
+    width: 300px;
+    height: 180px;
+  }
+  #name {
+    text-transform: uppercase;
+    font-size: 10px;
+    /* font-weight: 700; */
+    /* color: #f10000; */
+  }
+  #nick {
+    font-size: 10px;
+    /* font-weight: 700; */
+  }
+  #id-number {
+    font-size: 8px;
+  }
+  #role {
+    font-weight: 400;
+    font-size: 8px;
+  }
+  .game-icon > img {
+    max-width: 30px;
+  }
+  h1 {
+    margin-bottom: 2px !important;
+  }
+}
+@media (max-width: 299px) {
+  .card {
+    width: 200px;
+    height: 120px;
+  }
+  #name {
+    text-transform: uppercase;
+    font-size: 6px;
+    /* font-weight: 700; */
+    /* color: #f10000; */
+  }
+  #nick {
+    font-size: 6px;
+    /* font-weight: 700; */
+  }
+  #id-number {
+    font-size: 6px;
+  }
+  #role {
+    font-weight: 400;
+    font-size: 6px;
+  }
+  .game-icon > img {
+    max-width: 20px;
+  }
+  h1 {
+    margin-bottom: 2px !important;
+  }
+}
