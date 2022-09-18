@@ -5,6 +5,7 @@
   },
   "hosting": [
     {
+      "target": "uepb-gaming",
       "public": "dist/uepb-gaming",
       "ignore": [
         "firebase.json",
